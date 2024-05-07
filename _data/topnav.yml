@@ -1,0 +1,22 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+subitems:
+- title: The Ecosystem
+  url: /
+- title: Software metadata partners
+  url: /partners
+- title: Applications
+  url: /applications
+- title: About
+  subitems:
+    - title: Licence
+      url: /licence
+    - title: Contributors
+      url: /contributors
+    - title: Contacts
+      url: /contacts
+    - title: Publications and presentations
+      url: /publications
+    - title: Credits
+      url: /credits
+

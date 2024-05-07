@@ -1,0 +1,25 @@
+# List of contributors
+#
+# reference maintainers/contributors by their name used in contributors metadata section on the pages.
+# Extra metadata that is possible to add:
+# Full Name:
+#    git: github id
+#    email: email adress
+#    orcid: orcid id
+#    role: the role of the contributor
+#    affiliation: affiliation
+#    image_url: absolute path to image (default image from github)
+
+Hervé Ménager:
+    git: hmenager
+    email: herve.menager@pasteur.fr
+    orcid: 0000-0002-7552-1009
+    affiliation: Institut Pasteur / Institut Français de Bioinformatique
+Alban Gaignard:
+    git: albangaignard
+    email: alban.gaignard@univ-nantes.fr
+    orcid: 0000-0002-3597-8557
+Matúš Kalaš:
+    git: matuskalas
+    email: drmatuskalas@duck.com
+    orcid: 0000-0002-1509-4981

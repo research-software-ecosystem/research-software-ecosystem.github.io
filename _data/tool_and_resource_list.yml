@@ -1,0 +1,42 @@
+- id: biotools
+  name: bio.tools
+  url: https://bio.tools
+  description:
+    A comprehensive registry of software and databases, facilitating 
+    researchers from across the spectrum of biological and biomedical 
+    science to find, understand, utilise and cite the resources they 
+    need in their day-to-day work.
+  registry:
+    fairsharing: 63520c 
+- id: bioconda
+  name: Bioconda
+  url: https://bioconda.github.io/
+  description: 
+    Bioconda is a bioinformatics channel for the Conda package manager
+  registry:
+    biotools: bioconda
+    tess: Bioconda
+- id: biocontainers
+  name: BioContainers
+  url: https://biocontainers.pro
+  description:
+    A community-driven project to create and manage bioinformatics software 
+    containers
+  registry:
+    biotools: biocontainers
+- id: openebench
+  name: OpenEBench 
+  url: https://openebench.bsc.es
+  description:
+    The ELIXIR gateway to benchmarking communities, software monitoring, and
+    quality metrics for life sciences tools and workflows.
+  registry:
+    biotools: openebench
+- id: debianmed 
+  name: Debian Med
+  url: https://www.debian.org/devel/debian-med/index.en.html
+  description:
+    Debian Med is a "Debian Pure Blend" with the aim to develop Debian into an
+    operating system that is particularly well fit for the requirements for 
+    medical practice and biomedical research.
+
