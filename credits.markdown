@@ -8,7 +8,7 @@ layout: page
 
 ## Funding and coordination
 
-The ELIXIR RSEc is supported and coordinated by [ELIXIR Europe](https://elixir-europe.org/).
+The ELIXIR Research Software Ecosystem is supported and coordinated by [ELIXIR Europe](https://elixir-europe.org/).
 
 # Credits
 
