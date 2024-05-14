@@ -8,6 +8,11 @@
     need in their day-to-day work.
   registry:
     fairsharing: 63520c 
+- id: galaxy
+  name: Galaxy
+  url: https://github.com/galaxyproject/galaxy_tool_metadata_extractor
+  description:
+    A collection of Galaxy tool suits combined with statistics and tool metadata.
 - id: bioconda
   name: Bioconda
   url: https://bioconda.github.io/
