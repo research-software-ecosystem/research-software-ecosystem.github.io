@@ -5,6 +5,11 @@
 layout: page
 ---
 
+
+# Funding
+
+The ELIXIR Research Software Ecosystem is supported and coordinated by [ELIXIR Europe](https://elixir-europe.org/).
+
 # Credits
 
 ### Framework
