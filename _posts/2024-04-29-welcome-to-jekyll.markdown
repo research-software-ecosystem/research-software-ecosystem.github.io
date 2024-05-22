@@ -1,5 +1,4 @@
 ---
-layout: page
 title:  "Welcome to Jekyll!"
 date:   2024-04-29 22:09:46 +0200
 categories: jekyll update
