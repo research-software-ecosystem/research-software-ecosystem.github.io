@@ -1,61 +1,57 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: The ELIXIR Research Software Ecosystem
-  #email: 
+# This appears in the html browser tab for the site title (seen mostly by search engines, not users)
+
+# topnav_title: ELIXIR toolkit theme
+# Optional: this appears on the top navigation bar next to the main_logo.svg icon
+
 description: >- # this means to ignore newlines until "baseurl:"
   The Research Software Ecosystem (RSEc) aims to act as a resource for collecting,
   maintaining, sharing, and preserving high-quality information (“metadata”) about 
   research software across scientific applications, building upon the ELIXIR’s work 
   in life sciences.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-  #twitter_username: jekyllrb
-github_username: research-software-ecosystem
+# Metadata description of the website
 
-# Build settings
-#theme: minima
-theme: elixir-toolkit-theme
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.0.0
+
+exclude:
+  - .gitignore
+  - var/
+  - vendor
+  - Gemfile*
+  - LICENSE
+
+sass:
+    style: compressed
+
+defaults:
+# Define here page metadata attributes for all pages at once or on specific directories. More information: https://jekyllrb.com/docs/configuration/front-matter-defaults/
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      permalink: /:basename
+      layout: "page"
+
 plugins:
-  - jekyll-feed
+  - elixir-toolkit-theme-plugins
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-github-metadata
+  - jemoji
+  - webrick
+
 
 theme_variables: 
  topnav:
    brand_logo: assets/img/logo-rsec.svg
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+
+exclude:
+  - README.md
+  - .gitignore
+  - var/
+  - vendor
+  - Gemfile*
+  - LICENSE
