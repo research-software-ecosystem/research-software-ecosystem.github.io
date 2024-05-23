@@ -44,7 +44,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          echo "PAGES_REPO_NWO = ${{ secrets.PAGES_REPO_NWO }}"
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           # JEKYLL_ENV: production
           PAGES_REPO_NWO: ${{ github.repository }}
