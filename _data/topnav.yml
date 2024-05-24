@@ -3,10 +3,10 @@
 subitems:
 - title: The Ecosystem
   url: /index
-- title: Software metadata partners
-  url: /partners
-- title: Applications
-  url: /applications
+- title: Resources
+  url: /resources
+- title: Users
+  url: /users
 - title: About
   subitems:
     - title: Licence
