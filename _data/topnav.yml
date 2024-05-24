@@ -2,11 +2,11 @@
 ## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
 subitems:
 - title: The Ecosystem
-  url: /
-- title: Software metadata partners
-  url: /partners
-- title: Applications
-  url: /applications
+  url: /index
+- title: Resources
+  url: /resources
+- title: Users
+  url: /users
 - title: About
   subitems:
     - title: Licence

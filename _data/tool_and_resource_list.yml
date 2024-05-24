@@ -8,11 +8,16 @@
     need in their day-to-day work.
   registry:
     fairsharing: 63520c 
-- id: galaxy
-  name: Galaxy
+  related_pages:
+    - resources
+    - users
+- id: galaxy_tools_metadata_extractor
+  name: Galaxy Tool Metadata Extractor
   url: https://github.com/galaxyproject/galaxy_tool_metadata_extractor
   description:
-    A collection of Galaxy tool suits combined with statistics and tool metadata.
+    A collection of Galaxy tool suites combined with statistics and tool metadata.
+  related_pages:
+    - resources
 - id: bioconda
   name: Bioconda
   url: https://bioconda.github.io/
@@ -21,6 +26,8 @@
   registry:
     biotools: bioconda
     tess: Bioconda
+  related_pages:
+    - resources
 - id: biocontainers
   name: BioContainers
   url: https://biocontainers.pro
@@ -29,6 +36,8 @@
     containers
   registry:
     biotools: biocontainers
+  related_pages:
+    - resources
 - id: openebench
   name: OpenEBench 
   url: https://openebench.bsc.es
@@ -37,6 +46,8 @@
     quality metrics for life sciences tools and workflows.
   registry:
     biotools: openebench
+  related_pages:
+    - resources
 - id: debianmed 
   name: Debian Med
   url: https://www.debian.org/devel/debian-med/index.en.html
@@ -44,4 +55,6 @@
     Debian Med is a "Debian Pure Blend" with the aim to develop Debian into an
     operating system that is particularly well fit for the requirements for 
     medical practice and biomedical research.
+  related_pages:
+    - resources
 
