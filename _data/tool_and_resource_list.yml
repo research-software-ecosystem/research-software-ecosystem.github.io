@@ -11,6 +11,13 @@
   related_pages:
     - resources
     - users
+- id: galaxy_tools_metadata_extractor
+  name: Galaxy Tool Metadata Extractor
+  url: https://github.com/galaxyproject/galaxy_tool_metadata_extractor
+  description:
+    A collection of Galaxy tool suites combined with statistics and tool metadata.
+  related_pages:
+    - resources
 - id: bioconda
   name: Bioconda
   url: https://bioconda.github.io/
