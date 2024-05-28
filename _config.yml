@@ -46,7 +46,8 @@ plugins:
 theme_variables: 
  topnav:
    brand_logo: assets/img/logo-rsec.svg
-
+ headings:
+   resource-table-all: " " 
 
 exclude:
   - README.md
