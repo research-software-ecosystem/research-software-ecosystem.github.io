@@ -11,6 +11,16 @@
   related_pages:
     - resources
     - users
+- id: galaxy
+  name: Galaxy
+  url: https://galaxyproject.org
+  description:
+    Galaxy is an open-source platform that allows researchers to analyze and share scientific
+    data using interoperable APIs and various user-friendly web-based interfaces. Galaxy tools
+    can be annotated with EDAM ontologies, bio.tools IDs and linked to OpenEBench, Conda packages
+    and BioContainers.
+  related_pages:
+    - users
 - id: galaxy_tools_metadata_extractor
   name: Galaxy Tool Metadata Extractor
   url: https://github.com/galaxyproject/galaxy_tool_metadata_extractor
