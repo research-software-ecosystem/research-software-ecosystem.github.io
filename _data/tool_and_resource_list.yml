@@ -69,4 +69,16 @@
     medical practice and biomedical research.
   related_pages:
     - resources
-
+- id: workflowhub 
+  name: WorkflowHub
+  url: https://workflowhub.eu/
+  description:
+    WorkflowHub is a registry of computational workflows, agnostic 
+    to workflow systems, but with tighter integrations for Galaxy, 
+    Nextflow and Common Workflow Language. Assigns DOIs to 
+    FAIR Computational Workflow and packages workflows with their
+    contextual using Bioschemas and the  
+    FAIR data packaging method RO-Crate.
+  related_pages:
+    - resources
+    - users
