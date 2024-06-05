@@ -38,6 +38,7 @@
     tess: Bioconda
   related_pages:
     - resources
+    - user
 - id: biocontainers
   name: BioContainers
   url: https://biocontainers.pro
