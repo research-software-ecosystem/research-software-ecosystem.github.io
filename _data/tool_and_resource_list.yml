@@ -25,7 +25,8 @@
   name: Galaxy Tool Metadata Extractor
   url: https://github.com/galaxyproject/galaxy_tool_metadata_extractor
   description:
-    A collection of Galaxy tool suites combined with statistics and tool metadata.
+    A collection of Galaxy tool suites combined with statistics and tool metadata. The metadata is retrieved by scraping the Galaxy tool wrappers in
+    their GitHub repositories and querying available Galaxy servers.
   related_pages:
     - resources
 - id: bioconda
@@ -38,6 +39,7 @@
     tess: Bioconda
   related_pages:
     - resources
+    - users
 - id: biocontainers
   name: BioContainers
   url: https://biocontainers.pro
