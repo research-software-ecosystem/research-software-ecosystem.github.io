@@ -11,6 +11,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   in life sciences.
 # Metadata description of the website
 
+gtag: G-CNXER21LC6
+# Google analytics tag
+
 remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.0.0
 
 exclude:
