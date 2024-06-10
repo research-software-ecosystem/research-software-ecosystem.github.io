@@ -13,3 +13,7 @@ The ELIXIR Research Software Ecosystem (RSEc) is a project that centralizes and 
     <img src="/assets/img/rsec.svg" alt="RSEc diagram" class="img-fluid">
   </div>
 </div>
+<span style="display:none;">
+  site gtag = {{ site.gtag }}
+  jekyll environment {{ jekyll.environment }}
+</span>
