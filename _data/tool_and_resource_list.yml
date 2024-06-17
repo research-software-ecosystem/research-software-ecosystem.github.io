@@ -9,8 +9,8 @@
   registry:
     fairsharing: 63520c 
   related_pages:
-    - resources
-    - users
+    - sources
+    - applications
 - id: galaxy
   name: Galaxy
   url: https://galaxyproject.org
@@ -20,7 +20,7 @@
     can be annotated with EDAM ontologies, bio.tools IDs and linked to OpenEBench, Conda packages
     and BioContainers.
   related_pages:
-    - users
+    - applications
 - id: galaxy_tools_metadata_extractor
   name: Galaxy Tool Metadata Extractor
   url: https://github.com/galaxyproject/galaxy_tool_metadata_extractor
@@ -28,7 +28,7 @@
     A collection of Galaxy tool suites combined with statistics and tool metadata. The metadata is retrieved by scraping the Galaxy tool wrappers in
     their GitHub repositories and querying available Galaxy servers.
   related_pages:
-    - resources
+    - sources
 - id: bioconda
   name: Bioconda
   url: https://bioconda.github.io/
@@ -38,8 +38,8 @@
     biotools: bioconda
     tess: Bioconda
   related_pages:
-    - resources
-    - users
+    - sources
+    - applications
 - id: biocontainers
   name: BioContainers
   url: https://biocontainers.pro
@@ -49,7 +49,7 @@
   registry:
     biotools: biocontainers
   related_pages:
-    - resources
+    - sources
 - id: openebench
   name: OpenEBench 
   url: https://openebench.bsc.es
@@ -59,7 +59,7 @@
   registry:
     biotools: openebench
   related_pages:
-    - resources
+    - sources
 - id: debianmed 
   name: Debian Med
   url: https://www.debian.org/devel/debian-med/index.en.html
@@ -68,7 +68,7 @@
     operating system that is particularly well fit for the requirements for 
     medical practice and biomedical research.
   related_pages:
-    - resources
+    - sources
 - id: workflowhub 
   name: WorkflowHub
   url: https://workflowhub.eu/
@@ -80,5 +80,5 @@
     contextual using Bioschemas and the  
     FAIR data packaging method RO-Crate.
   related_pages:
-    - resources
-    - users
+    - sources
+    - applications

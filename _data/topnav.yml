@@ -3,10 +3,10 @@
 subitems:
 - title: The Ecosystem
   url: /index
-- title: Resources
-  url: /resources
-- title: Users
-  url: /users
+- title: Sources
+  url: /sources
+- title: Applications
+  url: /applications
 - title: About
   subitems:
     - title: Licence
