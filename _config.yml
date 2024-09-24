@@ -44,7 +44,7 @@ plugins:
   - jekyll-github-metadata
   - jemoji
   - webrick
-
+  - jekyll-diagrams
 
 theme_variables: 
  topnav:

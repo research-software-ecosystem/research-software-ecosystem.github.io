@@ -19,4 +19,5 @@ subitems:
       url: /publications
     - title: Credits
       url: /credits
-
+    - title: Documentation
+      url: /docs
