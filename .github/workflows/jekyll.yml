@@ -43,6 +43,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
+      - name: Install Puppeteer Browsers
+        run: npx puppeteer browsers install chrome-headless-shell
       - name: Install dependencies
         run: |
           sudo npm install -g @mermaid-js/mermaid-cli  # Install Mermaid CLI
