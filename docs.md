@@ -49,11 +49,11 @@ Details about the specific formats for each of the federated resources can be fo
 |------------------------------------------------------------|------|
 | Bio.tools API Reference                                    | [Bio.tools API Reference](https://biotools.readthedocs.io/en/latest/api_reference.html#) |
 | OpenEBench      | [OpenEBench Technical metrics and endpoints description](https://openebench.bsc.es/monitor/) <br> [Tool JSON Schema](https://openebench.bsc.es/monitor/tool/tool.json) <br> [Metrics JSON Schema](https://openebench.bsc.es/monitor/metrics/metrics.json) |
-| Bioconda        | _WIP_ |
+| Bioconda        | [Bioconda contribution guidelines](https://bioconda.github.io/contributor/index.html) |
 | Biocontainers   | _WIP_ |
 | Galaxy Codex    | [Documentation work-in-progress](https://github.com/galaxyproject/galaxy_codex/issues/170) |
-| Debian Med      | _WIP_ |
-| BIII            | [Bioschemas](https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE) |
+| Debian Med      | The YAML files describing the packages are based on information extracted from the [Ultimate Debian Database](https://udd.debian.org/) using a [custom import script](https://github.com/research-software-ecosystem/utils/blob/main/debian-med-import/import.py) |
+| BIII            | The metadata describing the software are serialized as [Bioschemas](https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE)-based JSON-LD files, using a [custom import script](https://github.com/research-software-ecosystem/utils/blob/main/biii-import/biseEU_LD_export.py)  |
 
 
 ## Metadata Import Workflow
