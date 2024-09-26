@@ -21,12 +21,12 @@
     and BioContainers.
   related_pages:
     - applications
-- id: galaxy_tools_metadata_extractor
-  name: Galaxy Tool Metadata Extractor
-  url: https://github.com/galaxyproject/galaxy_tool_metadata_extractor
+- id: galaxy_codex
+  name: Galaxy Codex
+  url: https://github.com/galaxyproject/galaxy_codex
   description:
-    A collection of Galaxy tool suites combined with statistics and tool metadata. The metadata is retrieved by scraping the Galaxy tool wrappers in
-    their GitHub repositories and querying available Galaxy servers.
+    Galaxy Communities Dock aka Galaxy Codex is a catalog of Galaxy resources (tools, training, workflows) 
+    that can be filtered for any community.
   related_pages:
     - sources
 - id: bioconda
