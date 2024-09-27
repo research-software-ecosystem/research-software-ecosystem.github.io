@@ -11,7 +11,7 @@ The RSEc version-controlled repository federates metadata for research software,
 
 The RSEc metadata can be accessed on [the GitHub dedicated repository](https://github.com/research-software-ecosystem/content). The main folders to access metadata are: the `imports` folder, which contains one subfolder per metadata source, and the `data` folder, which contains one subfolder for each of the bio.tools entries, combining bio.tools tools and metadata files which are directly linked to it. An example of this organisation is illustrated in <a href="#metadata-files-organisation">Figure 1</a>. 
 
-<details id="metadata-files-organisation">
+<details id="metadata-files-organisation" open="true">
   <summary>Fig. 1: Example organisation of the metadata files imported in the RSEc metadata repository</summary>
   <p>
    <div style="width:100%">
@@ -55,6 +55,17 @@ Details about the specific formats for each of the federated resources can be fo
 | Debian Med      | The YAML files describing the packages are based on information extracted from the [Ultimate Debian Database](https://udd.debian.org/) using a [custom import script](https://github.com/research-software-ecosystem/utils/blob/main/debian-med-import/import.py) |
 | BIII            | The metadata describing the software are serialized as [Bioschemas](https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE)-based JSON-LD files, using a [custom import script](https://github.com/research-software-ecosystem/utils/blob/main/biii-import/biseEU_LD_export.py)  |
 
+Most metadata formats for a given source include cross-links to other sources:
+
+|   Source     | bio.tools | OpenEBench | Bioconda | Biocontainers | Galaxy Codex | Debian Med | BIII      |
+|--------------|-----------|------------|----------|---------------|--------------|------------|-----------|
+| bio.tools    | XXXXXXXXX |            |          |               |              | url entries of the 'download' key where type="Software package" and "url" starts with "https://tracker.debian.org/pkg/", the remainer of the url being the Debian package name |           |          
+| OpenEBench   | List elements that have and @id key starting with `https://openebench.bsc.es/monitor/metrics/biotools` | XXXXXXXXX  | List elements that have and @id key starting with `https://openebench.bsc.es/monitor/metrics/bioconda` |               | List elements that have and @id key starting with `https://openebench.bsc.es/monitor/metrics/galaxy` |            |           |          
+| Bioconda     | YAML list extra.identifiers, CURIEs starting with 'biotools:'          |            | XXXXXXXXX|               |              | For usegalaxy.eu, YAML list extra.identifiers, CURIEs starting with 'usegalaxy-eu:'           |           |          
+| Biocontainers|           |            |          | XXXXXXXXX     |              |            |           |          
+| Galaxy Codex |           |            | 'Conda_id' key in the JSON file |               | XXXXXXXXX    |            |           |          
+| Debian Med   | YAML list registries, CURIES are in 'entry' key when 'name' is 'bio.tools' |            | YAML list registries, CURIES are in 'entry' key when 'name' is 'conda:bioconda' |               |              | XXXXXXXXX  |           |          
+| BIII         |           |            |          |               |              |            | XXXXXXXXX |          
 
 ## Metadata Import Workflow
 
@@ -67,16 +78,16 @@ The outline of this workflow is illustrated in <a href="#ci-import-workflow-diag
 
 | Resource  Description | CI code location |
 |-----------------------|------------------|
-| Bio.tools             | https://github.com/research-software-ecosystem/utils/tree/main/biotools-import |
-| OpenEBench            | https://github.com/research-software-ecosystem/utils/tree/main/openebench-import |
-| Bioconda              | https://github.com/research-software-ecosystem/utils/tree/main/bioconda-import |
-| Biocontainers         | https://github.com/research-software-ecosystem/utils/tree/main/biocontainers-import |
-| Galaxy Codex          | https://github.com/research-software-ecosystem/utils/tree/main/galaxytool-import |
-| Debian Med            | https://github.com/research-software-ecosystem/utils/tree/main/debian-med-import |
-| BIII                  | https://github.com/research-software-ecosystem/utils/tree/main/biii-import |
+| Bio.tools             | [https://github.com/research-software-ecosystem/utils/tree/main/biotools-import](https://github.com/research-software-ecosystem/utils/tree/main/biotools-import) |
+| OpenEBench            | [https://github.com/research-software-ecosystem/utils/tree/main/openebench-import](https://github.com/research-software-ecosystem/utils/tree/main/openebench-import) |
+| Bioconda              | [https://github.com/research-software-ecosystem/utils/tree/main/bioconda-import](https://github.com/research-software-ecosystem/utils/tree/main/bioconda-import) |
+| Biocontainers         | [https://github.com/research-software-ecosystem/utils/tree/main/biocontainers-import](https://github.com/research-software-ecosystem/utils/tree/main/biocontainers-import) |
+| Galaxy Codex          | [https://github.com/research-software-ecosystem/utils/tree/main/galaxytool-import](https://github.com/research-software-ecosystem/utils/tree/main/galaxytool-import) |
+| Debian Med            | [https://github.com/research-software-ecosystem/utils/tree/main/debian-med-import](https://github.com/research-software-ecosystem/utils/tree/main/debian-med-import) |
+| BIII                  | [https://github.com/research-software-ecosystem/utils/tree/main/biii-import](https://github.com/research-software-ecosystem/utils/tree/main/biii-import) |
 
 
-<details id="ci-import-workflow-diagram">>
+<details id="ci-import-workflow-diagram" open="true">
   <summary>CI Import workflows in the repository</summary>
   <p>
    {% mermaid %}
