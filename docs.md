@@ -57,15 +57,15 @@ Details about the specific formats for each of the federated resources can be fo
 
 Most metadata formats for a given source include cross-links to other sources:
 
-|   Source     | bio.tools | OpenEBench | Bioconda | Biocontainers | Galaxy Codex | Debian Med | BIII      |
+|   Destination / **Source**   | bio.tools | OpenEBench | Bioconda | Biocontainers | Galaxy Codex | Debian Med | BIII      |
 |--------------|-----------|------------|----------|---------------|--------------|------------|-----------|
-| bio.tools    | XXXXXXXXX |            |          |               |              | url entries of the 'download' key where type="Software package" and "url" starts with "https://tracker.debian.org/pkg/", the remainer of the url being the Debian package name |           |          
-| OpenEBench   | List elements that have and @id key starting with `https://openebench.bsc.es/monitor/metrics/biotools` | XXXXXXXXX  | List elements that have and @id key starting with `https://openebench.bsc.es/monitor/metrics/bioconda` |               | List elements that have and @id key starting with `https://openebench.bsc.es/monitor/metrics/galaxy` |            |           |          
-| Bioconda     | YAML list extra.identifiers, CURIEs starting with 'biotools:'          |            | XXXXXXXXX|               |              | For usegalaxy.eu, YAML list extra.identifiers, CURIEs starting with 'usegalaxy-eu:'           |           |          
-| Biocontainers|           |            |          | XXXXXXXXX     |              |            |           |          
-| Galaxy Codex |           |            | 'Conda_id' key in the JSON file |               | XXXXXXXXX    |            |           |          
-| Debian Med   | YAML list registries, CURIES are in 'entry' key when 'name' is 'bio.tools' |            | YAML list registries, CURIES are in 'entry' key when 'name' is 'conda:bioconda' |               |              | XXXXXXXXX  |           |          
-| BIII         |           |            |          |               |              |            | XXXXXXXXX |          
+| **bio.tools**    | XXXXXXXXX |            |          |               |              | url entries of the `download` key where `type="Software package"` and `url` starts with `"https://tracker.debian.org/pkg/"`, the remainer of the url being the Debian package name |           |
+| **OpenEBench**   | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/biotools"` |XXXXXXXXX  | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/bioconda"` |               | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/galaxy"` |            |           |
+| **Bioconda**     | YAML list `extra.identifiers`, CURIEs starting with `"biotools:"`          |            | XXXXXXXXX|               |              | For _usegalaxy.eu_, YAML list `extra.identifiers`, CURIEs starting with `"usegalaxy-eu:"`           |           |
+| **Biocontainers** |           |            |          | XXXXXXXXX     |              |            |           |
+| **Galaxy Codex** |           |            | 'Conda_id' key in the JSON file |               | XXXXXXXXX    |            |           |
+| **Debian Med**   | YAML list registries, CURIES are in `entry` key when `name` is `"bio.tools"` |            | YAML list registries, CURIES are in `entry` key when `name` is `"conda:bioconda"` |               |              | XXXXXXXXX  |           |
+| **BIII**         |           |            |          |               |              |            | XXXXXXXXX |
 
 ## Metadata Import Workflow
 
