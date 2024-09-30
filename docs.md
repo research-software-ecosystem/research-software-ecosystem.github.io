@@ -59,7 +59,7 @@ Most metadata formats for a given source include cross-links to other sources:
 
 |   Destination / **Source**   | bio.tools | OpenEBench | Bioconda | Biocontainers | Galaxy Codex | Debian Med | BIII      |
 |--------------|-----------|------------|----------|---------------|--------------|------------|-----------|
-| **bio.tools**    | XXXXXXXXX |            |          |               |              | url entries of the `download` key where `type="Software package"` and `url` starts with `"https://tracker.debian.org/pkg/"`, the remainer of the url being the Debian package name |           |
+| **bio.tools**    | XXXXXXXXX |            | url entries of the `download` key where `url` starts with `"https://anaconda.org/bioconda/"`, the remainer of the url being the Bioconda package name |               |              | url entries of the `download` key where `url` starts with `"https://tracker.debian.org/pkg/"`, the remainer of the url being the Debian package name |           |
 | **OpenEBench**   | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/biotools"` |XXXXXXXXX  | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/bioconda"` |               | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/galaxy"` |            |           |
 | **Bioconda**     | YAML list `extra.identifiers`, CURIEs starting with `"biotools:"`          |            | XXXXXXXXX|               |              | For _usegalaxy.eu_, YAML list `extra.identifiers`, CURIEs starting with `"usegalaxy-eu:"`           |           |
 | **Biocontainers** |           |            |          | XXXXXXXXX     |              |            |           |
