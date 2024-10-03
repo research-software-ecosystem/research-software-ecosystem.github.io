@@ -63,7 +63,7 @@ Most metadata formats for a given source include cross-links to other sources:
 | **OpenEBench**   | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/biotools"` |XXXXXXXXX  | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/bioconda"` |               | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/galaxy"` |            |           |
 | **Bioconda**     | YAML list `extra.identifiers`, CURIEs starting with `"biotools:"`          |            | XXXXXXXXX|               |              | For _usegalaxy.eu_, YAML list `extra.identifiers`, CURIEs starting with `"usegalaxy-eu:"`           |           |
 | **Biocontainers** |           |            |          | XXXXXXXXX     |              |            |           |
-| **Galaxy Codex** |           |            | 'Conda_id' key in the JSON file |               | XXXXXXXXX    |            |           |
+| **Galaxy Codex** | 'bio.tool_id' key in the JSON file |            | 'Conda_id' key in the JSON file |               | XXXXXXXXX    |            |           |
 | **Debian Med**   | YAML list registries, CURIES are in `entry` key when `name` is `"bio.tools"` |            | YAML list registries, CURIES are in `entry` key when `name` is `"conda:bioconda"` |               |              | XXXXXXXXX  |           |
 | **BIII**         |           |            |          |               |              |            | XXXXXXXXX |
 
