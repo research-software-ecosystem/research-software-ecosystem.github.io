@@ -82,3 +82,13 @@
   related_pages:
     - sources
     - applications
+- id: bioconductor 
+  name: Bioconductor
+  url: https://bioconductor.org/
+  description:
+    Bioconductor is an open-source project offering R-based tools for 
+    bioinformatics and computational biology, focused on high-throughput 
+    genomic data analysis. It promotes reproducible research through 
+    standardized data formats and adherence to FAIR principles.
+  related_pages:
+    - sources
