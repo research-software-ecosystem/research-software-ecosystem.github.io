@@ -6,7 +6,7 @@
 <div class="row align-items-center">
   <div class="col-12 col-md-6">
     <p>
-      RSEc centralizes and curates high-quality metadata for computational biology software tools, providing a single, trusted resource for researchers. By synchronizing metadata from <a href="/sources">major software-related services</a>, RSEc enables the discovery, validation and cross-linking of software information. Researchers can use the resource to explore software metadata and improve the consistency and quality of information across the computational biology landscape.
+      ELIXIR Research Software Ecosystem (RSEc) centralizes and curates high-quality metadata for computational biology software tools, providing a single, trusted resource for researchers. By synchronizing metadata from <a href="/sources">major software-related services</a>, RSEc enables the discovery, validation and cross-linking of software information. Researchers can use the resource to explore software metadata and improve the consistency and quality of information across the computational biology landscape.
     </p>
     <p>
       RSEc is <a href="/licence">open</a>, version-controlled and <a href="https://github.com/research-software-ecosystem">hosted on GitHub</a>. This centralized approach facilitates curation, promotes interoperability and supports the development of new services, ultimately enhancing the reliability and utility of research software.
