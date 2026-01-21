@@ -14,7 +14,7 @@ The Research Software Ecosystem is built by a community across ELIXIR and collab
 
 The ELIXIR Research Software Ecosystem is supported and coordinated by [ELIXIR Europe](https://elixir-europe.org/).
 
-## Credits
+## Acknowledgements
 
 ### Framework
 
