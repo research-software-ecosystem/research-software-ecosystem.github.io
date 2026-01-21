@@ -23,7 +23,7 @@ title: The Ecosystem
 </div>
 
 <div class="mt-5">
-  <h2 class="h4 mb-3">How it helps</h2>
+  <p class="h4 mb-3">How it helps</p>
   <div class="row gy-3">
     <div class="col-12 col-md-4">
       <div class="card h-100 shadow-sm">
