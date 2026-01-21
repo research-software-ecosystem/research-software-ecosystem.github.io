@@ -4,6 +4,8 @@
 title: Credits
 ---
 
+## Contributors
+
 The Research Software Ecosystem is built by a community across ELIXIR and collaborating organisations. The list below is generated from `_data/CONTRIBUTORS.yml`.
 
 {% include contributor-tiles-all.html %}
