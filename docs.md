@@ -128,7 +128,7 @@ Most metadata formats for a given source include cross-links to other sources:
 
 |   Destination / **Source**   | bio.tools | OpenEBench | Bioconda | Biocontainers | Galaxy Codex | Debian Med | BIII      | Bioconductor |
 |--------------|-----------|------------|----------|---------------|--------------|------------|-----------|------------|
-| **bio.tools**    | n/a |            | url entries of the `download` key where `url` starts with `"https://anaconda.org/bioconda/"`, the remainer of the url being the Bioconda package name |               |              | url entries of the `download` key where `url` starts with `"https://tracker.debian.org/pkg/"`, the remainer of the url being the Debian package name |           |  |
+| **bio.tools**    | n/a |            | url entries of the `download` key where `url` starts with `"https://anaconda.org/bioconda/"`, the remainder of the url being the Bioconda package name |               |              | url entries of the `download` key where `url` starts with `"https://tracker.debian.org/pkg/"`, the remainder of the url being the Debian package name |           |  |
 | **OpenEBench**   | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/biotools"` |n/a  | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/bioconda"` |               | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/galaxy"` |            |           |  |
 | **Bioconda**     | YAML list `extra.identifiers`, CURIEs starting with `"biotools:"`          |            | n/a|               |              | For _usegalaxy.eu_, YAML list `extra.identifiers`, CURIEs starting with `"usegalaxy-eu:"`           |           |  |
 | **Biocontainers** |           |            |          | n/a     |              |            |           |  |
@@ -179,4 +179,4 @@ The outline of this workflow is illustrated in <a href="#ci-import-workflow-diag
 
 ## Contributing guidelines
 
-We welcome any contribution to the project. Please refer to the [governance document](https://github.com/research-software-ecosystem/content/blob/master/GOVERNANCE.md), and get in contact with us (see _Contact Information_).
+We welcome any contribution to the project. Please refer to the [governance document](https://github.com/research-software-ecosystem/content/blob/master/GOVERNANCE.md), and get in contact with us (see the [Contacts page](/contacts)).
