@@ -21,7 +21,7 @@
     and BioContainers.
   related_pages:
     - applications
-- id: galaxy
+- id: galaxy_codex
   name: Galaxy Codex
   url: https://github.com/galaxyproject/galaxy_codex
   description:
