@@ -1,5 +1,4 @@
 ---
----
 title: Credits (moved)
 redirect_to: /contributors
 ---
