@@ -24,7 +24,7 @@ The RSEc aggregates metadata from the registries and services below. Each source
           <div class="d-flex justify-content-between align-items-start">
             <div>
               <div class="fw-bold">{{ resource.name }}</div>
-              {% assign display_url = resource.url | remove: "https://" | remove: "http://" | remove: "www." | replace: "/" ,"" %}
+              {% assign display_url = resource.url | remove: "https://" | remove: "http://" | remove: "www." %}
               <div class="text-muted small mb-2">
                 <a class="text-muted text-decoration-none" href="{{ resource.url }}">{{ display_url }}</a>
               </div>
