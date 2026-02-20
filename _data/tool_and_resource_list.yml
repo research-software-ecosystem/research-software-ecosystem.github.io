@@ -31,7 +31,7 @@
     - sources
 - id: bioconda
   name: Bioconda
-  url: https://bioconda.github.io/
+  url: https://bioconda.github.io
   description: 
     Bioconda is a bioinformatics channel for the Conda package manager
   registry:
@@ -60,7 +60,7 @@
     biotools: openebench
   related_pages:
     - sources
-- id: debianmed 
+- id: debian-med 
   name: Debian Med
   url: https://www.debian.org/devel/debian-med/index.en.html
   description:
@@ -71,7 +71,7 @@
     - sources
 - id: workflowhub 
   name: WorkflowHub
-  url: https://workflowhub.eu/
+  url: https://workflowhub.eu
   description:
     WorkflowHub is a registry of computational workflows, agnostic 
     to workflow systems, but with tighter integrations for Galaxy, 
@@ -84,7 +84,7 @@
     - applications
 - id: bioconductor 
   name: Bioconductor
-  url: https://bioconductor.org/
+  url: https://bioconductor.org
   description:
     Bioconductor is an open-source project offering R-based tools for 
     bioinformatics and computational biology, focused on high-throughput 

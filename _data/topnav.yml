@@ -7,17 +7,15 @@ subitems:
   url: /sources
 - title: Applications
   url: /applications
+- title: Documentation
+  url: /docs
+- title: Get support
+  url: /contacts
 - title: About
   subitems:
     - title: Licence
       url: /licence
     - title: Contributors
       url: /contributors
-    - title: Contacts
-      url: /contacts
     - title: Publications
       url: /publications
-    - title: Credits
-      url: /credits
-    - title: Documentation
-      url: /docs

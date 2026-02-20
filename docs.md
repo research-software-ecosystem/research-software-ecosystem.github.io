@@ -5,13 +5,79 @@ title: Documentation
 ---
 
 ## Introduction
-The RSEc version-controlled repository federates metadata for research software, predominantly within the life sciences domain. These metadata cover a wide spectrum of use cases, spanning software discovery, evaluation, deployment, and execution. Centralised in an open and version-controlled repository, these metadata can be used to cross-link multiple services, to facilitate curation, and to provide insights on bioinformatics software through their aggregation and analysis. This page contains the information and links to access and understand the software metadata provided by the Research Software Ecosystem, as well as contribution guidelines and support channels.
+The RSEc version-controlled repository federates metadata for research software, predominantly within the life sciences domain. These metadata cover a wide spectrum of use cases, spanning software discovery, evaluation, deployment, and execution.
+
+Centralised in an open and version-controlled repository, the metadata enable cross-linking between services, facilitate curation, and provide insights through aggregation and analysis. This page collects key links to access and understand the software metadata provided by the Research Software Ecosystem, plus contribution guidelines and support channels.
 
 ## Quick start
-- Browse metadata directly in the [RSEc content repository](https://github.com/research-software-ecosystem/content) (see `data` and `imports`).
-- Check the [imports workflow](https://github.com/research-software-ecosystem/content/tree/master/.github/workflows/import.yaml) to see when each source is refreshed.
-- Use the cross-links in the table below to jump between sources (e.g. bio.tools IDs, Bioconda packages, Galaxy tool IDs).
-- Open an issue in the [content repo issue tracker](https://github.com/research-software-ecosystem/content/issues) if you spot a metadata problem.
+
+<div class="row gy-3">
+  <div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="fw-bold mb-1">1) Browse</div>
+        <p class="mb-2">Open the <a href="https://github.com/research-software-ecosystem/content">content repository</a> and explore `data/` (by tool) or `imports/` (by source).</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="fw-bold mb-1">2) Check freshness</div>
+        <p class="mb-2">See when imports run in the <a href="https://github.com/research-software-ecosystem/content/tree/master/.github/workflows/import.yaml">GitHub Actions workflow</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="fw-bold mb-1">3) Cross-link</div>
+        <p class="mb-2">Use identifiers in the cross-link table below (e.g. bio.tools IDs, Bioconda packages, Galaxy tool IDs).</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="fw-bold mb-1">4) Report</div>
+        <p class="mb-2">Open an issue in the <a href="https://github.com/research-software-ecosystem/content/issues">content repo tracker</a> if you spot a problem.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## How to use the metadata
+
+<div class="row gy-3">
+  <div class="col-12 col-md-4">
+    <div class="card h-100 border-0">
+      <div class="card-body">
+        <div class="fw-bold mb-1">Discover tools</div>
+        <p class="mb-2">Search `data/tool-id` folders to see aggregated metadata across registries.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="card h-100 border-0">
+      <div class="card-body">
+        <div class="fw-bold mb-1">Validate metadata</div>
+        <p class="mb-2">Compare entries across sources (e.g. bio.tools vs OpenEBench) and file PRs to fix discrepancies.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="card h-100 border-0">
+      <div class="card-body">
+        <div class="fw-bold mb-1">Integrate programmatically</div>
+        <p class="mb-2">Consume raw JSON/YAML from the repository, mirror it, or automate updates with the weekly imports.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-info mt-3" role="alert">
+  Need a starting point? Browse the <a href="https://github.com/research-software-ecosystem/content/tree/master/data">`data/` folder</a> to download a sample tool folder and experiment locally.
+</div>
 
 ## Metadata Repository contents
 
@@ -19,39 +85,29 @@ The RSEc metadata can be accessed on [the GitHub dedicated repository](https://g
 
 <details id="metadata-files-organisation" open="true">
   <summary>Fig. 1: Example organisation of the metadata files imported in the RSEc metadata repository</summary>
-  <p>
-   <div style="width:100%">
-   {% mermaid %}
-      graph LR
-         root[https://github.com/research-software-ecosystem/content];
-         root--> /imports[imports];
-         /imports--> /imports/biotools[biotools];
-         /imports/biotools--> /imports/biotools/software1[software1.biotools.json];
-         /imports/biotools--> /imports/biotools/software2[software2.biotools.json];
-         /imports/biotools--> /imports/biotools/software3[software3.biotools.json];
-         /imports--> /imports/bioconda[bioconda];
-         /imports/bioconda--> /imports/bioconda/software1[bioconda_software1.yaml];
-         /imports/bioconda--> /imports/bioconda/software2[bioconda_software2.yaml];
-         /imports/bioconda--> /imports/bioconda/software4[bioconda_software4.yaml];
-         root--> /data[data];
-         /data--> /data/software1[software1];
-         /data/software1--> /data/software1/software1biotoolsjson[software1.biotools.json];
-         /data/software1--> /data/software1/software1biocondayaml[bioconda_software1.yaml];
-         /data--> /data/software2[software2];
-         /data/software2--> /data/software2/software2biotoolsjson[software2.biotools.json];
-         /data/software2--> /data/software2/software2biocondayaml[bioconda_software2.yaml];
-         /data--> /data/software3[software3];
-         /data/software3--> /data/software3/software3biotoolsjson[software3.biotools.json];
-   {% endmermaid %}
-   </div>
-  </p>
+  {% mermaid %}
+    graph LR
+       root[https://github.com/research-software-ecosystem/content];
+       root--> /imports[imports];
+       /imports--> /imports/biotools[biotools];
+       /imports/biotools--> /imports/biotools/software1[software1.biotools.json];
+       /imports/biotools--> /imports/biotools/software2[software2.biotools.json];
+       /imports/biotools--> /imports/biotools/software3[software3.biotools.json];
+       /imports--> /imports/bioconda[bioconda];
+       /imports/bioconda--> /imports/bioconda/software1[bioconda_software1.yaml];
+       /imports/bioconda--> /imports/bioconda/software2[bioconda_software2.yaml];
+       /imports/bioconda--> /imports/bioconda/software4[bioconda_software4.yaml];
+       root--> /data[data];
+       /data--> /data/software1[software1];
+       /data/software1--> /data/software1/software1biotoolsjson[software1.biotools.json];
+       /data/software1--> /data/software1/software1biocondayaml[bioconda_software1.yaml];
+       /data--> /data/software2[software2];
+       /data/software2--> /data/software2/software2biotoolsjson[software2.biotools.json];
+       /data/software2--> /data/software2/software2biocondayaml[bioconda_software2.yaml];
+       /data--> /data/software3[software3];
+       /data/software3--> /data/software3/software3biotoolsjson[software3.biotools.json];
+  {% endmermaid %}
 </details>
-
-## How to use the metadata
-- **Discover tools**: search `data/<tool-id>` folders to see aggregated metadata across registries.
-- **Validate metadata**: compare entries across sources (e.g. bio.tools vs OpenEBench) and file PRs to fix discrepancies.
-- **Integrate programmatically**: consume the raw JSON/YAML from the repository or mirror it to your own services.
-- **Automate updates**: use the weekly imports as a stable schedule for downstream synchronisation.
 
 ## Supported Formats
 
@@ -72,14 +128,14 @@ Most metadata formats for a given source include cross-links to other sources:
 
 |   Destination / **Source**   | bio.tools | OpenEBench | Bioconda | Biocontainers | Galaxy Codex | Debian Med | BIII      | Bioconductor |
 |--------------|-----------|------------|----------|---------------|--------------|------------|-----------|------------|
-| **bio.tools**    | XXXXXXXXX |            | url entries of the `download` key where `url` starts with `"https://anaconda.org/bioconda/"`, the remainer of the url being the Bioconda package name |               |              | url entries of the `download` key where `url` starts with `"https://tracker.debian.org/pkg/"`, the remainer of the url being the Debian package name |           |  |
-| **OpenEBench**   | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/biotools"` |XXXXXXXXX  | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/bioconda"` |               | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/galaxy"` |            |           |  |
-| **Bioconda**     | YAML list `extra.identifiers`, CURIEs starting with `"biotools:"`          |            | XXXXXXXXX|               |              | For _usegalaxy.eu_, YAML list `extra.identifiers`, CURIEs starting with `"usegalaxy-eu:"`           |           |  |
-| **Biocontainers** |           |            |          | XXXXXXXXX     |              |            |           |  |
-| **Galaxy Codex** | 'bio.tool_id' key in the JSON file |            | 'Conda_id' key in the JSON file |               | XXXXXXXXX    |            |           |  |
-| **Debian Med**   | YAML list registries, CURIES are in `entry` key when `name` is `"bio.tools"` |            | YAML list registries, CURIES are in `entry` key when `name` is `"conda:bioconda"` |               |              | XXXXXXXXX  |           |  |
-| **BIII**         |           |            |          |               |              |            | XXXXXXXXX |  |
-| **Bioconductor**         |           |            |          |               |              |            |  | XXXXXXXXX |
+| **bio.tools**    | n/a |            | url entries of the `download` key where `url` starts with `"https://anaconda.org/bioconda/"`, the remainder of the url being the Bioconda package name |               |              | url entries of the `download` key where `url` starts with `"https://tracker.debian.org/pkg/"`, the remainder of the url being the Debian package name |           |  |
+| **OpenEBench**   | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/biotools"` |n/a  | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/bioconda"` |               | List elements that have and `@id` key starting with `"https://openebench.bsc.es/monitor/metrics/galaxy"` |            |           |  |
+| **Bioconda**     | YAML list `extra.identifiers`, CURIEs starting with `"biotools:"`          |            | n/a|               |              | For _usegalaxy.eu_, YAML list `extra.identifiers`, CURIEs starting with `"usegalaxy-eu:"`           |           |  |
+| **Biocontainers** |           |            |          | n/a     |              |            |           |  |
+| **Galaxy Codex** | 'bio.tool_id' key in the JSON file |            | 'Conda_id' key in the JSON file |               | n/a    |            |           |  |
+| **Debian Med**   | YAML list registries, CURIES are in `entry` key when `name` is `"bio.tools"` |            | YAML list registries, CURIES are in `entry` key when `name` is `"conda:bioconda"` |               |              | n/a  |           |  |
+| **BIII**         |           |            |          |               |              |            | n/a |  |
+| **Bioconductor**         |           |            |          |               |              |            |  | n/a |
 
 ## Metadata Import Workflow
 
@@ -90,42 +146,37 @@ The metadata is imported and updated using a [GitHub actions workflow](https://g
 - commits this version of the metadata.
 The outline of this workflow is illustrated in <a href="#ci-import-workflow-diagram">Fig. 2</a>.
 
-| Resource  Description | CI code location |
-|-----------------------|------------------|
-| Bio.tools             | [https://github.com/research-software-ecosystem/utils/tree/main/biotools-import](https://github.com/research-software-ecosystem/utils/tree/main/biotools-import) |
-| OpenEBench            | [https://github.com/research-software-ecosystem/utils/tree/main/openebench-import](https://github.com/research-software-ecosystem/utils/tree/main/openebench-import) |
-| Bioconda              | [https://github.com/research-software-ecosystem/utils/tree/main/bioconda-import](https://github.com/research-software-ecosystem/utils/tree/main/bioconda-import) |
-| Biocontainers         | [https://github.com/research-software-ecosystem/utils/tree/main/biocontainers-import](https://github.com/research-software-ecosystem/utils/tree/main/biocontainers-import) |
-| Galaxy Codex          | [https://github.com/research-software-ecosystem/utils/tree/main/galaxytool-import](https://github.com/research-software-ecosystem/utils/tree/main/galaxytool-import) |
-| Debian Med            | [https://github.com/research-software-ecosystem/utils/tree/main/debian-med-import](https://github.com/research-software-ecosystem/utils/tree/main/debian-med-import) |
-| BIII                  | [https://github.com/research-software-ecosystem/utils/tree/main/biii-import](https://github.com/research-software-ecosystem/utils/tree/main/biii-import) |
+<div class="d-flex flex-wrap gap-3 my-3">
+  <div class="border rounded p-3 shadow-sm">
+    <div class="fw-bold">Weekly cadence</div>
+    <div class="text-muted small">All sources refreshed via GitHub Actions</div>
+  </div>
+  <div class="border rounded p-3 shadow-sm">
+    <div class="fw-bold">Source-specific jobs</div>
+    <div class="text-muted small">Isolated workflows per source for traceability</div>
+  </div>
+  <div class="border rounded p-3 shadow-sm">
+    <div class="fw-bold">Version controlled</div>
+    <div class="text-muted small">Every import is committed for full history</div>
+  </div>
+</div>
 
 
 <details id="ci-import-workflow-diagram" open="true">
   <summary>CI Import workflows in the repository</summary>
-  <p>
-   {% mermaid %}
-   graph TB
-      A[bio.tools] --> Y(metadata import) 
-      B[OpenEBench] --> Y(metadata import)
-      C[BioConda] --> Y(metadata import)
-      D[BIII] --> Y(metadata import)
-      E[BioContainers] --> Y(metadata import)
-      F[Galaxy CoDeX] --> Y(metadata import)
-      G[Debian Med] --> Y(metadata import)
-      Y(metadata import) --> Z[RSEc]
-    {% endmermaid %}
-  </p>
+  {% mermaid %}
+  graph TB
+     A[bio.tools] --> Y(metadata import) 
+     B[OpenEBench] --> Y(metadata import)
+     C[BioConda] --> Y(metadata import)
+     D[BIII] --> Y(metadata import)
+     E[BioContainers] --> Y(metadata import)
+     F[Galaxy CoDeX] --> Y(metadata import)
+     G[Debian Med] --> Y(metadata import)
+     Y(metadata import) --> Z[RSEc]
+  {% endmermaid %}
 </details>
 
 ## Contributing guidelines
 
-We welcome any contribution to the project. Please refer to the [governance document](https://github.com/research-software-ecosystem/content/blob/master/GOVERNANCE.md), and get in contact with us (see _Contact Information_).
-
-## Citation
-
-Ienasescu H, Capella-Gutiérrez S, Coppens F _et al._ The ELIXIR research software ecosystem [version 1; not peer reviewed]. _F1000Research_ 2023, 12:988 (slides) [https://doi.org/10.7490/f1000research.1119585.1](https://doi.org/10.7490/f1000research.1119585.1) 
-
-## Contact Information
-
-A public channel is available on gitter to get in contact with the project team: [https://app.gitter.im/#/room/#bio-tools_ecosystem:gitter.im](https://app.gitter.im/#/room/#bio-tools_ecosystem:gitter.im)
+We welcome any contribution to the project. Please refer to the [governance document](https://github.com/research-software-ecosystem/content/blob/master/GOVERNANCE.md), and get in contact with us (see the [Contacts page](/contacts)).
