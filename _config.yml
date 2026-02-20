@@ -14,9 +14,10 @@ description: >- # this means to ignore newlines until "baseurl:"
 gtag: G-CNXER21LC6
 # Google analytics tag
 
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@3.0.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@5.0.0
 
 exclude:
+  - README.md
   - .gitignore
   - var/
   - vendor
@@ -51,11 +52,3 @@ theme_variables:
    brand_logo: assets/img/logo-rsec.svg
  headings:
    resource-table-all: " " 
-
-exclude:
-  - README.md
-  - .gitignore
-  - var/
-  - vendor
-  - Gemfile*
-  - LICENSE
