@@ -1,0 +1,6 @@
+/* Theme v5 still renders the topnav search UI even with search: false. */
+header .nav-break,
+header form[role="search"],
+header #search-results {
+  display: none !important;
+}
