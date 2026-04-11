@@ -1,8 +1,24 @@
-copyright: 
+copyright: "&copy; 2024 Research Software Ecosystem"
 extra_line: 
 columns:
   - type: links
-    width: 3
-    children: 
+    width: 2
+    children:
+      - url_text: Credits
+        url: /contributors
       - url_text: License
         url: /licence
+  - type: links
+    width: 2
+    children:
+      - url_text: Contacts
+        url: /contacts
+      - url_text: Report an issue
+        url: https://github.com/research-software-ecosystem/content/issues
+  - type: links
+    width: 2
+    children:
+      - url_text: Website source
+        url: https://github.com/research-software-ecosystem/research-software-ecosystem.github.io
+      - url_text: Metadata repository
+        url: https://github.com/research-software-ecosystem/content
