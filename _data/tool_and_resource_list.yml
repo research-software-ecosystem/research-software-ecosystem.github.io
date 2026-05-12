@@ -96,3 +96,13 @@
     fairsharing: 81ettx 
   related_pages:
     - sources
+- id: rsec-atlas
+  name: RSEc Atlas
+  url: https://research-software-ecosystem.github.io/RSEc-Atlas/
+  description: 
+    This static site web application demonstrates the possibilities of
+    the RSEc. The website is designed to help researchers and scientists
+    explore the metadata of various scientific tools, with the final aim
+    of improving findability. 
+  related_pages:
+    - applications

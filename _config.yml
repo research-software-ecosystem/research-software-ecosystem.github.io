@@ -49,6 +49,8 @@ plugins:
 
 theme_variables: 
  topnav:
-   brand_logo: assets/img/logo-rsec.svg
+   brand_logo: assets/img/logo-rsec-full.svg
+   search: false
+   github: false
  headings:
    resource-table-all: " " 
