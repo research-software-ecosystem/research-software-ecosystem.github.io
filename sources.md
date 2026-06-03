@@ -7,7 +7,7 @@ page_id: sources
 
 The RSEc aggregates metadata from the registries and services below. Each source is refreshed regularly through the automated import workflows described in the documentation. Pick a source to see what is covered and where to dive into example records.
 
-{% assign source_items = site.data.tool_and_resource_list | where_exp:"item","item.related_pages contains 'sources'" | sort:"name" %}
+{% assign source_items = site.data.tool_and_resource_list | where_exp: "item", "item.related_pages contains 'sources'" | sort_natural: "name" %}
 
 <div class="row gy-3">
   {% for resource in source_items %}

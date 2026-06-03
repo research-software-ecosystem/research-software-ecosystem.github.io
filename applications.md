@@ -11,7 +11,7 @@ RSEc metadata supports a variety of downstream applications, from workflow catal
   Want to build on RSEc? Start with the <a href="/docs">documentation</a>, explore the <a href="https://github.com/research-software-ecosystem/content/tree/master/data">sample metadata folders</a>, and open an <a href="https://github.com/research-software-ecosystem/content/issues">issue</a> if you need guidance.
 </div>
 
-{% assign application_items = site.data.tool_and_resource_list | where_exp:"item","item.related_pages contains 'applications'" | sort:"name" %}
+{% assign application_items = site.data.tool_and_resource_list | where_exp: "item", "item.related_pages contains 'applications'" | sort_natural: "name" %}
 
 <div class="row gy-3">
   {% for resource in application_items %}
