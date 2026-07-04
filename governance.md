@@ -13,7 +13,7 @@ changes are reviewed and publicly traceable. This website provides a stable entr
       <div class="card-body">
         <div class="fw-bold mb-1">Governance model</div>
         <p class="mb-2">Roles, responsibilities, communication channels, support, contribution process, and decision making.</p>
-        <a class="btn btn-primary" href="https://github.com/research-software-ecosystem/content/blob/master/GOVERNANCE.md" target="_blank">Read the governance model</a>
+        <a class="btn btn-primary" href="https://github.com/research-software-ecosystem/content/blob/master/GOVERNANCE.md" target="_blank" rel="noopener noreferrer">Read the governance model</a>
       </div>
     </div>
   </div>
