@@ -11,6 +11,8 @@ subitems:
   url: /contacts
 - title: About
   subitems:
+    - title: Governance
+      url: /governance
     - title: Licence
       url: /licence
     - title: Contributors
