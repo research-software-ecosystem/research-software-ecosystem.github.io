@@ -22,7 +22,7 @@ changes are reviewed and publicly traceable. This website provides a stable entr
       <div class="card-body">
         <div class="fw-bold mb-1">Roles and committees</div>
         <p class="mb-2">Current committee membership and the list of RSEc contributors, past and present.</p>
-        <a class="btn btn-outline-primary" href="https://github.com/research-software-ecosystem/content/blob/master/roles.md" target="_blank">View roles and contributors</a>
+        <a class="btn btn-outline-primary" href="https://github.com/research-software-ecosystem/content/blob/master/roles.md" target="_blank" rel="noopener noreferrer">View roles and contributors</a>
       </div>
     </div>
   </div>
