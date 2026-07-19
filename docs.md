@@ -30,7 +30,7 @@ The Atlas is a presentation layer over the metadata commons: use it for human-fr
 <div class="mt-3 mb-4">
   <a
     class="btn btn-primary"
-    href="{{ '/research-software-ecosystem-metadata-commons-datasets-latest.gz' | relative_url }}"
+    href="{{ '/research-software-ecosystem-metadata-commons-datasets-latest.tar.gz' | relative_url }}"
     download
   >
     Download the latest metadata archive
