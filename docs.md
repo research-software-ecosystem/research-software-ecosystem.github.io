@@ -9,6 +9,34 @@ The RSEc version-controlled repository federates metadata for research software,
 
 Centralised in an open and version-controlled repository, the metadata enable cross-linking between services, facilitate curation, and provide insights through aggregation and analysis. This page collects key links to access and understand the software metadata provided by the Research Software Ecosystem, plus contribution guidelines and support channels.
 
+## What the RSEc provides
+
+The RSEc is a federated metadata commons rather than a replacement for the registries, package repositories, container infrastructure, workflow platforms, or benchmarking services that contribute to it. Each community remains responsible for its own source of truth; the RSEc aligns and links those sources so that they can be used together.
+
+This approach is deliberately format-agnostic. Source metadata can be preserved in its native JSON, YAML, or other representation while the RSEc builds tool-centred bundles and interoperable views for downstream use. Persistent identifiers and cross-links connect software with versions, packages, containers, workflows, publications, authors, licences, usage information, and scientific concepts such as EDAM topics and operations.
+
+The repository is useful to three audiences:
+
+- Researchers can find tools, compare available ways to run them, and follow links to documentation, publications, training, workflows, Galaxy instances, Bioconda packages, or containers.
+- Developers and curators can improve one metadata record and make that improvement available to several consuming services, subject to source-specific validation and synchronisation rules.
+- Service developers can reuse versioned metadata programmatically instead of building and maintaining a separate catalogue of overlapping tool descriptions.
+
+## Browse the RSEc Atlas
+
+The [RSEc Atlas](https://research-software-ecosystem.github.io/RSEc-Atlas/) is the interactive entry point for exploring the aggregated metadata. Search by tool name, description, tags, EDAM topic, or bio.tools collection, then filter by options such as Galaxy or Bioconda availability, licence, or favourites. Tool pages can expose installation strings, container commands, Galaxy launch links, DOI references, usage statistics, related workflows, and training materials.
+
+The Atlas is a presentation layer over the metadata commons: use it for human-friendly discovery, and use the [content repository](https://github.com/research-software-ecosystem/content) or the [RSEc utilities](https://github.com/research-software-ecosystem/utils) when you need reproducible or programmatic access.
+
+<div class="mt-3 mb-4">
+  <a
+    class="btn btn-primary"
+    href="{{ '/research-software-ecosystem-metadata-commons-datasets-latest.gz' | relative_url }}"
+    download
+  >
+    Download the latest metadata archive
+  </a>
+</div>
+
 ## Quick start
 
 <div class="row gy-3">
@@ -83,6 +111,8 @@ Centralised in an open and version-controlled repository, the metadata enable cr
 
 The RSEc metadata can be accessed on [the GitHub dedicated repository](https://github.com/research-software-ecosystem/content). The main folders to access metadata are: the `imports` folder, which contains one subfolder per metadata source, and the `data` folder, which contains one subfolder for each of the bio.tools entries, combining bio.tools tools and metadata files which are directly linked to it. An example of this organisation is illustrated in <a href="#metadata-files-organisation">Figure 1</a>. 
 
+Each software entry is organised as a tool-centred metadata bundle. This makes it possible to inspect the native source files alongside the cross-linked files contributed by other providers. A bundle may include descriptions, versions, dependencies, identifiers, publications, packaging or container information, workflow relationships, monitoring metrics, and semantic annotations. The `imports/` tree is source-oriented; the `data/` tree is designed for following one tool across sources.
+
 <details id="metadata-files-organisation" open="true">
   <summary>Fig. 1: Example organisation of the metadata files imported in the RSEc metadata repository</summary>
   {% mermaid %}
@@ -122,7 +152,9 @@ Details about the specific formats for each of the federated resources can be fo
 | Galaxy Codex    | [Documentation work-in-progress](https://github.com/galaxyproject/galaxy_codex/issues/170) |
 | Debian Med      | The YAML files describing the packages are based on information extracted from the [Ultimate Debian Database](https://udd.debian.org/) using a [custom import script](https://github.com/research-software-ecosystem/utils/blob/main/debian-med-import/import.py) |
 | BIII            | The metadata describing the software are serialized as [Bioschemas](https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE)-based JSON-LD files, using a [custom import script](https://github.com/research-software-ecosystem/utils/blob/main/biii-import/biseEU_LD_export.py)  |
-| Bioconductor            | The metadata describing the software are in   |
+| Bioconductor            | Release metadata are collected from the [Bioconductor package release API](https://bioconductor.org/packages/release/BiocViews.html) and citation records, then merged with RSEc metadata while preserving curated annotations such as EDAM terms. |
+
+The RSEc also generates linked-data representations using [schema.org](https://schema.org/), [Bioschemas](https://bioschemas.org/) profiles such as [ComputationalTool](https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE), JSON-LD, and RDF Turtle. These exports are useful when a catalogue, search service, semantic-web application, or other automated agent needs a standardised view without discarding the original source metadata.
 
 Most metadata formats for a given source include cross-links to other sources:
 
@@ -176,6 +208,41 @@ The outline of this workflow is illustrated in <a href="#ci-import-workflow-diag
      Y(metadata import) --> Z[RSEc]
   {% endmermaid %}
 </details>
+
+## Integration model
+
+RSEc integrations fall into two broad categories. The distinction is about how closely the RSEc participates in a source's metadata lifecycle, not simply how much data a source contributes.
+
+### Lightweight integrations
+
+Lightweight integrations retrieve source metadata with minimal transformation, preserve its native structure, and place it in the appropriate tool bundle. Examples include scheduled imports from [Bioconda](https://bioconda.github.io/), [BioContainers](https://biocontainers.pro/), [Debian Med](https://www.debian.org/devel/debian-med/), and [Galaxy Codex](https://github.com/galaxyproject/galaxy_codex). These jobs keep the commons current while leaving source-specific semantics and governance with the originating community.
+
+### Deep integrations
+
+Deep integrations add validation, schema transformation, semantic export, cross-resource matching, or synchronisation back to an upstream service. The [bio.tools](https://bio.tools/) integration, for example, supports a bidirectional bridge with protected-field checks. [Bioconductor](https://bioconductor.org/) metadata can be merged with RSEc records while preserving curated annotations such as EDAM terms. [OpenEBench](https://openebench.bsc.es/) contributes monitoring and quality indicators that extend the metadata commons from findability and access towards evidence-based comparison and sustainability.
+
+## Quality, validation, and provenance
+
+Every import is associated with a source, an automated workflow, and a commit in the repository history. Continuous-integration jobs validate source files, generate repository reports, and export downstream formats. This gives users a reproducible way to see what changed and why a particular version of a record is present.
+
+Validation happens at several levels:
+
+- Syntactic checks detect malformed JSON/YAML and schema violations.
+- Semantic checks verify controlled terms where a source provides them, including EDAM concepts.
+- Cross-resource checks identify possible links between records, such as a Galaxy tool and its bio.tools entry.
+- Community review remains important for equivalence mappings and other cases where automated matching cannot be trusted on its own.
+
+The RSEc therefore combines automation with human curation. Upstream quality, availability, and identifier stability still affect the quality of the resulting commons; when you find a mismatch, report it with the relevant source record and tool identifier.
+
+## Reuse in other services
+
+The RSEc is intended to be consumed by services that add their own context rather than duplicate the underlying curation. Examples described in the manuscript include:
+
+- [ToolFinder](https://toolfinder.biocommons.org.au/) combines RSEc descriptions, EDAM topics, publications, and licences with local installation and availability information across Australian infrastructures.
+- [WorkflowHub](https://workflowhub.eu/) uses bio.tools identifiers and EDAM terms when workflows are registered and can annotate Galaxy workflows with the tools they use.
+- [Galaxy](https://galaxyproject.org/) uses shared tool identifiers and EDAM annotations to improve discovery and interoperability, while RSEc-linked metadata can add packaging, container, documentation, and usage context.
+
+For machine-readable reuse, start with the repository's raw JSON/YAML files and commit history. For maintained import and conversion logic, see the [utils repository](https://github.com/research-software-ecosystem/utils). For a human-facing catalogue, use the [RSEc Atlas](https://research-software-ecosystem.github.io/RSEc-Atlas/).
 
 ## Contributing guidelines
 
