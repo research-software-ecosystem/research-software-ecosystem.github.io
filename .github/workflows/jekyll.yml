@@ -90,7 +90,7 @@ jobs:
             --username "${{ github.actor }}" \
             --password-stdin
 
-          oras pull "$artifact" "$SOURCE_ARCHIVE" --output _site
+          oras pull "$artifact" --output _site
           test -f "$source_path"
           test -s "$source_path"
           mv "$source_path" "$output_path"
