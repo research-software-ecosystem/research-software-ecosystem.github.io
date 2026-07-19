@@ -109,7 +109,7 @@ The Atlas is a presentation layer over the metadata commons: use it for human-fr
 
 ## Metadata Repository contents
 
-The RSEc metadata can be accessed on [the GitHub dedicated repository](https://github.com/research-software-ecosystem/content). The main folders to access metadata are: the `imports` folder, which contains one subfolder per metadata source, and the `data` folder, which contains one subfolder for each of the bio.tools entries, combining bio.tools tools and metadata files which are directly linked to it. An example of this organisation is illustrated in <a href="#metadata-files-organisation">Figure 1</a>. 
+The RSEc metadata can be accessed on [the GitHub dedicated repository](https://github.com/research-software-ecosystem/content). The main folders to access metadata are: the `imports` folder, which contains one subfolder per metadata source, and the `data` folder, which contains one subfolder for each of the bio.tools entries, combining bio.tools tools and metadata files which are directly linked to it. An example of this organisation is illustrated in <a href="#metadata-files-organisation">Fig. 1</a>. 
 
 Each software entry is organised as a tool-centred metadata bundle. This makes it possible to inspect the native source files alongside the cross-linked files contributed by other providers. A bundle may include descriptions, versions, dependencies, identifiers, publications, packaging or container information, workflow relationships, monitoring metrics, and semantic annotations. The `imports/` tree is source-oriented; the `data/` tree is designed for following one tool across sources.
 
@@ -195,7 +195,7 @@ The outline of this workflow is illustrated in <a href="#ci-import-workflow-diag
 
 
 <details id="ci-import-workflow-diagram" open="true">
-  <summary>CI Import workflows in the repository</summary>
+  <summary>Fig. 2: CI Import workflows in the repository</summary>
   {% mermaid %}
   graph TB
      A[bio.tools] --> Y(metadata import) 

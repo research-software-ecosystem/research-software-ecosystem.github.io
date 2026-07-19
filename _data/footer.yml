@@ -6,7 +6,7 @@ columns:
     children:
       - url_text: Credits
         url: /contributors
-      - url_text: License
+      - url_text: Licence
         url: /licence
   - type: links
     width: 2
