@@ -82,7 +82,7 @@ jobs:
         run: |
           set -euo pipefail
           artifact="ghcr.io/${GHCR_ORGANIZATION}/${GHCR_PACKAGE}:${GHCR_TAG}"
-          archive_name="${GHCR_ORGANIZATION}-${GHCR_PACKAGE}-${GHCR_TAG}.gz"
+          archive_name="${GHCR_ORGANIZATION}-${GHCR_PACKAGE}-${GHCR_TAG}.tar.gz"
           source_path="_site/${SOURCE_ARCHIVE}"
           output_path="_site/${archive_name}"
 
