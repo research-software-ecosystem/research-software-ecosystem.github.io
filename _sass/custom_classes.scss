@@ -50,6 +50,7 @@ header {
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid rgba(2, 52, 82, 0.1);
   box-shadow: 0 4px 18px rgba(2, 52, 82, 0.05);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
