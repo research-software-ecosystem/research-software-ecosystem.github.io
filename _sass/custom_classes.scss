@@ -1,6 +1,670 @@
+/*
+ * Small, site-wide UX layer on top of the ELIXIR Toolkit theme.
+ * Brand colours are taken from the existing RSEc artwork.
+ */
+:root {
+  --rsec-navy: #023452;
+  --rsec-navy-hover: #07506f;
+  --rsec-orange: #f17c21;
+  --rsec-green: #79b473;
+  --rsec-ink: #23343e;
+  --rsec-muted: #5d6b73;
+  --rsec-border: #dce6e9;
+  --rsec-surface: #f5f8f9;
+  --rsec-shadow: 0 16px 40px rgba(2, 52, 82, 0.09);
+  --bs-primary: var(--rsec-navy);
+  --bs-primary-rgb: 2, 52, 82;
+  --bs-link-color: #075b78;
+  --bs-link-color-rgb: 7, 91, 120;
+  --bs-link-hover-color: var(--rsec-navy);
+  --bs-link-hover-color-rgb: 2, 52, 82;
+  --bs-focus-ring-color: rgba(241, 124, 33, 0.35);
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+body {
+  color: var(--rsec-ink);
+  font-size: 1.025rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+body > .container {
+  max-width: 1200px;
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+}
+
+header .container,
+footer .container {
+  max-width: 1200px;
+}
+
+/* Keep the navigation available without making it visually heavy. */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(2, 52, 82, 0.1);
+  box-shadow: 0 4px 18px rgba(2, 52, 82, 0.05);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+header .navbar {
+  margin-bottom: 0 !important;
+  padding-block: 0.7rem;
+  background: transparent;
+}
+
+header .navbar .navbar-brand img {
+  width: auto;
+  max-width: min(240px, 58vw);
+  max-height: 52px;
+}
+
+header .navbar-nav .nav-link {
+  padding: 0.55rem 0.75rem !important;
+  color: #324650;
+  font-size: 0.95rem;
+  font-weight: 650;
+  border-radius: 0.65rem;
+  transition: color 150ms ease, background-color 150ms ease,
+    transform 150ms ease;
+}
+
+header .navbar-nav .nav-link:hover,
+header .navbar-nav .nav-link:focus-visible,
+header .navbar-nav .nav-link.active,
+header .nav-item.dropdown:has(.dropdown-item.active) > .nav-link {
+  color: var(--rsec-navy);
+  background: #eef4f6;
+}
+
+header .navbar-nav .nav-link.active {
+  box-shadow: inset 0 -2px 0 var(--rsec-orange);
+}
+
+header .navbar-nav .nav-link[href="/contacts"] {
+  padding-inline: 1rem !important;
+  color: #fff;
+  background: var(--rsec-navy);
+}
+
+header .navbar-nav .nav-link[href="/contacts"]:hover,
+header .navbar-nav .nav-link[href="/contacts"]:focus-visible {
+  color: #fff;
+  background: var(--rsec-navy-hover);
+  transform: translateY(-1px);
+}
+
+header .navbar-nav .nav-link[href="/contacts"].active {
+  color: #fff;
+  background: var(--rsec-navy-hover);
+  box-shadow: inset 0 -2px 0 var(--rsec-orange);
+}
+
+header .navbar-toggler {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--rsec-navy) !important;
+  border: 1px solid var(--rsec-border);
+  border-radius: 0.7rem;
+}
+
+header .dropdown-menu {
+  padding: 0.5rem;
+  border: 1px solid var(--rsec-border);
+  border-radius: 0.8rem;
+  box-shadow: var(--rsec-shadow);
+}
+
+header .dropdown-item {
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+header .dropdown-item:hover,
+header .dropdown-item:focus,
+header .dropdown-item.active {
+  color: var(--rsec-navy);
+  background: #eef4f6;
+}
+
 /* Theme v5 still renders the topnav search UI even with search: false. */
 header .nav-break,
 header form[role="search"],
 header #search-results {
   display: none !important;
+}
+
+/* Strong, consistent keyboard focus across links and controls. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid rgba(241, 124, 33, 0.55);
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+
+/* Only reserve a TOC column when a page has enough sections to need one. */
+#main:not(:has(#content h2:not(.h2-like) ~ h2:not(.h2-like))) #toc,
+#main:has(.home-hero) #intro,
+#main:has(.home-hero) #toc {
+  display: none;
+}
+
+#main:has(.home-hero) {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  #main:not(:has(#content h2:not(.h2-like) ~ h2:not(.h2-like))) {
+    grid-template-areas: "intro" "content";
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+#intro h1 {
+  margin-bottom: 1.25rem;
+  color: var(--rsec-navy);
+  font-size: clamp(2.25rem, 4vw, 3.7rem);
+  font-weight: 750;
+  letter-spacing: -0.035em;
+}
+
+#content > p:first-child {
+  max-width: 54rem;
+  color: #465963;
+  font-size: 1.1rem;
+}
+
+#main h2,
+#main .h2,
+#main .h2-like {
+  color: var(--rsec-navy);
+  letter-spacing: -0.02em;
+}
+
+#main h2:not(.home-benefits__title)::after {
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-top: 0.55rem;
+  content: "";
+  background: var(--rsec-orange);
+  border-radius: 999px;
+}
+
+#content p,
+#content li {
+  color: var(--rsec-ink);
+}
+
+#content p a:not(.btn),
+#content li a:not(.btn),
+#content td a:not(.btn) {
+  font-weight: 550;
+  text-decoration: underline;
+  text-decoration-color: rgba(7, 91, 120, 0.35);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+#content p a:not(.btn):hover,
+#content li a:not(.btn):hover,
+#content td a:not(.btn):hover {
+  text-decoration-color: var(--rsec-orange);
+}
+
+/* Buttons use the dark brand colour so labels remain comfortably readable. */
+.btn {
+  --bs-btn-border-radius: 0.7rem;
+  --bs-btn-font-weight: 650;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-padding-y: 0.6rem;
+}
+
+.btn-sm {
+  --bs-btn-border-radius: 0.55rem;
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-padding-x: 0.7rem;
+  --bs-btn-padding-y: 0.38rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--rsec-navy);
+  --bs-btn-border-color: var(--rsec-navy);
+  --bs-btn-hover-bg: var(--rsec-navy-hover);
+  --bs-btn-hover-border-color: var(--rsec-navy-hover);
+  --bs-btn-active-bg: #012a43;
+  --bs-btn-active-border-color: #012a43;
+  --bs-btn-disabled-bg: var(--rsec-navy);
+  --bs-btn-disabled-border-color: var(--rsec-navy);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--rsec-navy);
+  --bs-btn-border-color: #9bb1bc;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--rsec-navy);
+  --bs-btn-hover-border-color: var(--rsec-navy);
+  --bs-btn-active-bg: var(--rsec-navy);
+  --bs-btn-active-border-color: var(--rsec-navy);
+}
+
+.text-primary {
+  color: var(--rsec-navy) !important;
+}
+
+.bg-primary {
+  background-color: var(--rsec-navy) !important;
+}
+
+.hover-primary:hover,
+.hover-primary:focus {
+  color: #fff !important;
+  background-color: var(--rsec-navy) !important;
+}
+
+/* Softer surfaces give dense information room to breathe. */
+#content .card {
+  overflow: hidden;
+  border-color: var(--rsec-border);
+  border-radius: 1rem;
+}
+
+#content .card.shadow-sm {
+  box-shadow: 0 8px 24px rgba(2, 52, 82, 0.07) !important;
+}
+
+#content .card:has(a) {
+  transition: transform 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+#content .card:has(a):hover {
+  border-color: #bdcfd6;
+  box-shadow: 0 14px 30px rgba(2, 52, 82, 0.12) !important;
+  transform: translateY(-3px);
+}
+
+#content .card-body {
+  padding: 1.35rem;
+}
+
+#content .card .fw-bold {
+  color: var(--rsec-navy);
+  font-size: 1.05rem;
+}
+
+#content .card-body > .d-flex.justify-content-between.align-items-start {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+#content .badge {
+  padding: 0.42em 0.68em;
+  white-space: normal;
+  line-height: 1.2;
+  text-align: left;
+  border-radius: 999px;
+}
+
+#content .badge.bg-warning {
+  color: #7a3605;
+  background: #fff0e4 !important;
+}
+
+#content .badge.bg-success {
+  color: #275c32;
+  background: #eaf4e9 !important;
+}
+
+#content .badge.bg-primary {
+  color: var(--rsec-navy);
+  background: #e8f1f4 !important;
+}
+
+#content .badge.hover-primary:hover,
+#content .badge.hover-primary:focus {
+  color: #fff;
+  background: var(--rsec-navy) !important;
+}
+
+.alert {
+  color: var(--rsec-ink);
+  background: #f1f7f8;
+  border: 0;
+  border-left: 4px solid var(--rsec-navy);
+  border-radius: 0.8rem;
+}
+
+.alert-primary,
+.alert-info {
+  color: var(--rsec-ink);
+  background: #f1f7f8;
+}
+
+details {
+  margin-block: 1.5rem;
+  padding: 1rem 1.15rem;
+  background: var(--rsec-surface);
+  border: 1px solid var(--rsec-border);
+  border-radius: 0.9rem;
+}
+
+details summary {
+  color: var(--rsec-navy);
+  font-weight: 700;
+}
+
+.table-responsive {
+  margin-block: 1.5rem;
+  border: 1px solid var(--rsec-border);
+  border-radius: 0.85rem;
+}
+
+#content table {
+  margin-bottom: 0;
+  font-size: 0.94rem;
+}
+
+#content table thead th {
+  color: #fff;
+  background: var(--rsec-navy);
+  border-color: #315d73;
+}
+
+#content table tbody tr:nth-child(even) {
+  background: #f8fafb;
+}
+
+#toc-contents {
+  padding: 1rem;
+  background: var(--rsec-surface);
+  border: 1px solid var(--rsec-border);
+  border-radius: 0.8rem;
+}
+
+#toc-contents ul a.active,
+#toc-contents ul a:hover {
+  color: var(--rsec-navy);
+  border-left-color: var(--rsec-orange);
+}
+
+#btn-toc-hide {
+  color: var(--rsec-navy);
+  border: 1px solid var(--rsec-border);
+  border-radius: 0.7rem;
+}
+
+/* Homepage: one distinctive hero and three simple paths onward. */
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(1.5rem, 5vw, 4.5rem);
+  background:
+    radial-gradient(circle at 92% 10%, rgba(121, 180, 115, 0.22), transparent 30%),
+    linear-gradient(135deg, #f2f7f8 0%, #fff 62%, #fff7f0 100%);
+  border: 1px solid var(--rsec-border);
+  border-radius: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: var(--rsec-shadow);
+}
+
+.home-hero::after {
+  position: absolute;
+  right: -9rem;
+  bottom: -11rem;
+  z-index: -1;
+  width: 24rem;
+  height: 24rem;
+  content: "";
+  border: 1px solid rgba(241, 124, 33, 0.22);
+  border-radius: 50%;
+}
+
+.home-hero__eyebrow {
+  margin-bottom: 0.8rem;
+  color: #9a4509;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#main .home-hero__title {
+  max-width: 14ch;
+  margin: 0 0 1.15rem;
+  color: var(--rsec-navy);
+  font-size: clamp(2.45rem, 5.5vw, 4.7rem);
+  font-weight: 780;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.home-hero__title span {
+  padding-inline: 0.03em;
+  background: linear-gradient(
+    transparent 82%,
+    rgba(241, 124, 33, 0.32) 82%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.home-hero__lead {
+  max-width: 42rem;
+  margin-bottom: 1.25rem;
+  color: #40545f;
+  font-size: clamp(1.05rem, 1.5vw, 1.23rem);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+#main .home-hero__proof {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+#main .home-hero__proof li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin: 0;
+  color: #354a55;
+}
+
+.home-hero__proof li::before {
+  display: inline-grid;
+  flex: 0 0 1.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.12rem;
+  color: #2c6637;
+  font-size: 0.78rem;
+  font-weight: 900;
+  content: "\2713";
+  background: #e7f2e6;
+  border-radius: 50%;
+  place-items: center;
+}
+
+.home-hero__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.home-hero__visual {
+  max-width: 29rem;
+  margin-inline: auto;
+  padding: clamp(0.75rem, 3vw, 1.75rem);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(2, 52, 82, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 20px 50px rgba(2, 52, 82, 0.08);
+}
+
+.home-hero__visual img {
+  filter: drop-shadow(0 15px 20px rgba(2, 52, 82, 0.12));
+}
+
+.home-benefits {
+  margin-top: clamp(3rem, 7vw, 5.5rem);
+}
+
+#main .home-benefits__title {
+  margin: 0 0 1.5rem;
+  color: var(--rsec-navy);
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  font-weight: 750;
+}
+
+.home-benefit-card {
+  position: relative;
+  border-top: 4px solid var(--rsec-navy) !important;
+}
+
+.home-benefits .col-12:nth-child(2) .home-benefit-card {
+  border-top-color: var(--rsec-orange) !important;
+}
+
+.home-benefits .col-12:nth-child(3) .home-benefit-card {
+  border-top-color: var(--rsec-green) !important;
+}
+
+.home-benefit-card__number {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: #8a9aa2;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+#main .home-benefit-card h3 {
+  margin: 0 0 0.55rem;
+  color: var(--rsec-navy);
+  font-size: 1.3rem;
+  font-weight: 750;
+}
+
+.home-benefit-card p {
+  color: var(--rsec-muted);
+}
+
+.home-benefit-card a {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  color: var(--rsec-navy);
+  font-weight: 700;
+}
+
+/* A calmer, more useful finish to every page. */
+footer {
+  margin-top: 2rem;
+  color: #dce7eb;
+  background: var(--rsec-navy);
+}
+
+footer a,
+footer a:visited {
+  color: #fff !important;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: #ffd1ac !important;
+}
+
+footer .copyright {
+  color: #dce7eb;
+  background: #012a43;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+footer #ett-logo .cls-1 {
+  fill: var(--rsec-orange);
+}
+
+footer #ett-logo:hover .cls-1 {
+  fill: #ffab68;
+}
+
+#back-to-top {
+  box-shadow: 0 8px 24px rgba(2, 52, 82, 0.24);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  header .navbar-collapse {
+    margin-top: 0.65rem;
+    padding: 0.4rem;
+    background: #fff;
+    border: 1px solid var(--rsec-border);
+    border-radius: 0.85rem;
+    box-shadow: var(--rsec-shadow);
+  }
+
+  header .navbar-nav .nav-link[href="/contacts"] {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 1rem;
+  }
+
+  body > .container {
+    padding-top: 1.35rem;
+  }
+
+  #intro h1 {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+
+  .home-hero {
+    padding: 1.4rem;
+  }
+
+  #main .home-hero__title {
+    max-width: 14ch;
+    font-size: clamp(2.4rem, 13vw, 3.4rem);
+  }
+
+  .home-hero__actions .btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .home-hero__visual {
+    max-width: 18rem;
+    margin-top: 0.5rem;
+  }
+
+  #content .card-body {
+    padding: 1.15rem;
+  }
 }
