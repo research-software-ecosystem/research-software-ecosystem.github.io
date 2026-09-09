@@ -242,7 +242,7 @@ The RSEc is intended to be consumed by services that add their own context rathe
 - [WorkflowHub](https://workflowhub.eu/) uses bio.tools identifiers and EDAM terms when workflows are registered and can annotate Galaxy workflows with the tools they use.
 - [Galaxy](https://galaxyproject.org/) uses shared tool identifiers and EDAM annotations to improve discovery and interoperability, while RSEc-linked metadata can add packaging, container, documentation, and usage context.
 
-For machine-readable reuse, start with the repository's raw JSON/YAML files and commit history. For maintained import and conversion logic, see the [utils repository](https://github.com/research-software-ecosystem/utils). For a human-facing catalogue, use the [RSEc Atlas](https://research-software-ecosystem.github.io/RSEc-Atlas/).
+For machine-readable reuse, start with the repository's raw JSON/YAML files and commit history. For maintained import and conversion logic, see the [utils repository](https://github.com/research-software-ecosystem/utils). For a human-facing catalogue, use the [RSEc Atlas](https://research-software-ecosystem.github.io/RSEc-Atlas/). Previously, conceptually equivalent functionality was achieved through the [RSEc-Dashboard](https://github.com/research-software-ecosystem/RSEc-Dashboard).
 
 ## Contributing guidelines
 
