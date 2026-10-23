@@ -7,7 +7,9 @@ subitems:
   url: /applications
 - title: Documentation
   url: /docs
-- title: Get support
+- title: Try SPARQL
+  url: /sparql/
+- title: Get in Touch
   url: /contacts
 - title: About
   subitems:

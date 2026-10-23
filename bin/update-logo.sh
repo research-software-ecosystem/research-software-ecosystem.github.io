@@ -51,7 +51,7 @@ convert "$OUTPUT_DIR/favicon-16x16.png" "$OUTPUT_DIR/favicon-32x32.png" "$OUTPUT
 echo "✓ favicon.ico"
 
 # Create Safari pinned tab icon (black silhouette)
-sed 's/fill="[^"]*"/fill="#000000"/g; s/stroke="[^"]*"/stroke="#000000"/g' "$SOURCE_SVG" > "$OUTPUT_DIR/safari-pinned-tab.svg"
+sed -E 's/fill="[^"]*"/fill="#000000"/g; s/stroke="[^"]*"/stroke="#000000"/g; s/(fill|stroke):[[:space:]]*#[[:xdigit:]]+;/\1: #000000;/g' "$SOURCE_SVG" > "$OUTPUT_DIR/safari-pinned-tab.svg"
 echo "✓ safari-pinned-tab.svg"
 
 echo ""
